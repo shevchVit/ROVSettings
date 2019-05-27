@@ -7,41 +7,49 @@
 
 struct InputPacket
 {
-    float Yaw = 0;
-    float Pitch = 0;
-    float Roll = 0;
-    float Depth = 0;
+    float yaw = 0;
+    float roll = 0;
+    float pitch = 0;
+    float depth = 0;
+    float temperature = 0;
+    uint8_t core = 0;
 };
 
+#pragma pack(push,1)
 struct OutputPacket
 {
-    bool isSettigsEnd = false;
+    bool is_settings = true;
 
-    int8_t axis_X;
-    int8_t axis_Y;
-    int8_t axis_Z;
-    int8_t axis_W;
+    int8_t axis_X = 0;
+    int8_t axis_Y = 0;
+    int8_t axis_Z = 0;
+    int8_t axis_W = 0;
 
-    float YawKp;
-    float YawKi;
-    float YawKd;
+    float YawKp = 0;
+    float YawKi = 0;
+    float YawKd = 0;
 
-    float PitchKp;
-    float PitchKi;
-    float PitchKd;
+    float PitchKp = 0;
+    float PitchKi = 0;
+    float PitchKd = 0;
 
-    float RollKp;
-    float RollKi;
-    float RollKd;
+    float RollKp = 0;
+    float RollKi = 0;
+    float RollKd = 0;
 
-    float DepthKp;
-    float DepthKi;
-    float DepthKd;
+    float DepthKp = 0;
+    float DepthKi = 0;
+    float DepthKd = 0;
 
-    float YawToSet;
-    float PitchToSet;
-    float RollToSet;
-    float DepthToSet;
+    uint16_t YawToSet = 0;
+    uint16_t PitchToSet = 0;
+    uint16_t RollToSet = 0;
+    uint16_t DepthToSet = 0;
 
-    bool regulators[4];
+    uint8_t yaw_regulator = 0;
+    uint8_t pitch_regulator = 0;
+    uint8_t roll_regulator = 0;
+    uint8_t depth_regulator = 0;
+
 };
+#pragma pack(pop)
